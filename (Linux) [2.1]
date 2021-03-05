@@ -1,0 +1,154 @@
+#! /usr/bin/python
+#Preinstalled Python import's
+import os
+
+import re
+import sys
+import csv
+import time
+import json
+import base64
+import shutil
+import ctypes
+
+__Version__ = "[Version: 3.5]"
+
+print_library = {
+
+    "loading_page":     " ____  _        ___   ____  _____   ___  \n" \
+                        "|    \| |      /  _] /    |/ ___/  /  _] \n" \
+                        "|  o  ) |     /  [_ |  o  (   \_  /  [_  \n" \
+                        "|   _/| |___ |    _]|     |\__  ||    _] \n" \
+                        "|  |  |     ||   [_ |  _  |/  \ ||   [_  \n" \
+                        "|  |  |     ||     ||  |  |\    ||     | \n" \
+                        "|__|  |_____||_____||__|__| \___||_____| \n" \
+                        "     __    __   ____  ____  ______       \n" \
+                        "    |  |__|  | /    ||    ||      |      \n" \
+                        "    |  |  |  ||  o  | |  | |      |      \n" \
+                        "    |  |  |  ||     | |  | |_|  |_|      \n" \
+                        "    |  `  '  ||  _  | |  |   |  |        \n" \
+                        "     \      / |  |  | |  |   |  |        \n" \
+                        "      \_/\_/  |__|__||____|  |__|        \n",
+
+    "printmain":        "(#) Null_Def_4ULT "+__Version__+"\n" \
+                        "(c) 2021 Unknown. No rights reserved.\n" \
+                        "          _nnnn_                            \n" \
+                        "         dGGGGMMb     ,'''''''''''''.      \n" \
+                        "        @p~qp~~qMb    | DeFr4mework |      \n" \
+                        "        M|@||@) M|   _;.............'      \n" \
+                        "        @,----.JM| -'                       \n" \
+                        "       JS^\__/  qKL                         \n" \
+                        "      dZP        qKRb                       \n" \
+                        "     dZP          qKKb                      \n" \
+                        "    fZP            SMMb                     \n" \
+                        "    HZM            MMMM                     \n" \
+                        "    FqM            MMMM                     \n" \
+                        "  __| '.        |\dS'qML                    \n" \
+                        "  |    `.       | `' \Zq                    \n" \
+                        " _)      \.___.,|     .'                    \n" \
+                        " \____   )MMMMMM|   .'                      \n" \
+                        "      `-'       `--' i<3u                    ",
+
+    "help_syntax":      "/==========FRAMEWORK CONTROL'S==========\\\n" \
+                        "|Reload    | Reload's the Framework     |\n" \
+                        "|help      | Print's this screen        |\n" \
+                        "|                                       |\n" \
+                        "|==========FUN FUNCTIONS================|\n" \
+                        "|star-wars | Pretty self explanatory    |\n" \
+                        "|                                       |\n" \
+                        "|==========TOOLS========================|\n" \
+                        "|#stt      | (Simple Spam Tool)         |\n" \
+                        "|                                       |\n" \
+                        "|---------------------------------------|\n" \
+                        "|Type '-h' After the command for-       |\n" \
+                        "|Command Instructions & Usage Guide     |\n" \
+                        "\\================(1/1)==================/",
+
+    "introduction":     "\n===================================\n" \
+                        "| Welcome to DeFr4mework          |\n" \
+                        "| Type \"help\" for Instructions    |\n" \
+                        "===================================",
+
+    "no_levitation":    "          _nnnn_                            \n" \
+                        "         dGGGGMMb     ,''''''''''''''''''''''''''''''''''''''''''.      \n" \
+                        "        @p~qp~~qMb    | Please run DeFr4mework as administrator! |      \n" \
+                        "        M|@||@) M|   _;..........................................'      \n" \
+                        "        @,----.JM| -'                       \n" \
+                        "       JS^\__/  qKL                         \n" \
+                        "      dZP        qKRb                       \n" \
+                        "     dZP          qKKb                      \n" \
+                        "    fZP            SMMb                     \n" \
+                        "    HZM            MMMM                     \n" \
+                        "    FqM            MMMM                     \n" \
+                        "  __| '.        |\dS'qML                    \n" \
+                        "  |    `.       | `' \Zq                    \n" \
+                        " _)      \.___.,|     .'                    \n" \
+                        " \____   )MMMMMM|   .'                      \n" \
+                        "      `-'       `--' i<3u                   \n",
+
+}
+
+##Check if run as root
+if not os.geteuid()==0:
+    os.system('clear')
+    sys.exit(print_library["no_levitation"])
+
+##Framework
+os.system('clear')
+print(print_library["printmain"], print_library["introduction"])
+
+Loop = True
+while Loop:
+    Framework_input = str(input("\n#>> "))
+
+    ## Framework "control's"
+    if Framework_input == "reload":
+        def reload():
+            os.system('clear')
+            print(print_library["printmain"])
+            print(print_library["introduction"])
+        reload()
+
+    ## "Help" Syntax's 
+    elif Framework_input == "help":
+        print(print_library["help_syntax"])
+
+    ## Fun Command's
+    elif Framework_input == "star-wars":
+      def starwars():  
+        os.system('sudo apt install telnet')
+        os.system('telnet towel.blinkenlights.nl')
+      starwars()
+
+    ## Simple Tool's
+    elif Framework_input == "#sst":
+        def SimpleSpamTool():
+            sstmsg = input("Enter the message: ")
+            sstamount = input("How many times?: ")
+
+            print("Spamming in..")
+
+            count = 5
+            while(count != 0):
+                print(count)
+                time.sleep(1)
+                count -= 1
+
+            print("Spamming has started!")
+
+            for i in range(0,int(sstamount)):
+                pyautogui.typewrite(sstmsg + '\n')
+
+        try:
+            import pyautogui
+            
+        except:
+            os.system('pip install pyautogui')
+            import pyautogui
+    
+        SimpleSpamTool()
+
+
+## Else Statement
+    else:
+        print(Framework_input+" isn't a valid command")
