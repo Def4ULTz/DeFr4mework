@@ -1,0 +1,266 @@
+#Preinstalled Python import's
+import os
+os.system('title DeFr4mework: [providing Requirements]')
+os.system('color 0a')
+import re
+import sys
+import csv
+import time
+import json
+import base64
+import shutil
+import ctypes
+
+#Manual Installed Python Modules
+try:
+    import sqlite3
+except:
+    os.system('pip install pysqlite3 ')
+    import sqlite3
+
+
+print_library = {
+
+    "loading_page":     " ____  _        ___   ____  _____   ___  \n" \
+                        "|    \| |      /  _] /    |/ ___/  /  _] \n" \
+                        "|  o  ) |     /  [_ |  o  (   \_  /  [_  \n" \
+                        "|   _/| |___ |    _]|     |\__  ||    _] \n" \
+                        "|  |  |     ||   [_ |  _  |/  \ ||   [_  \n" \
+                        "|  |  |     ||     ||  |  |\    ||     | \n" \
+                        "|__|  |_____||_____||__|__| \___||_____| \n" \
+                        "     __    __   ____  ____  ______       \n" \
+                        "    |  |__|  | /    ||    ||      |      \n" \
+                        "    |  |  |  ||  o  | |  | |      |      \n" \
+                        "    |  |  |  ||     | |  | |_|  |_|      \n" \
+                        "    |  `  '  ||  _  | |  |   |  |        \n" \
+                        "     \      / |  |  | |  |   |  |        \n" \
+                        "      \_/\_/  |__|__||____|  |__|        \n",
+
+    "printmain":        "(#) Null_Def_4ULT [Version 3.2]\n" \
+                        "(c) 2021 Unknown. No rights reserved.\n" \
+                        "          _nnnn_                            \n" \
+                        "         dGGGGMMb     ,'''''''''''''''''''''.      \n" \
+                        "        @p~qp~~qMb    | DeFr4mework         |      \n" \
+                        "        M|@||@) M|   _;............[V 3.2]..'      \n" \
+                        "        @,----.JM| -'                       \n" \
+                        "       JS^\__/  qKL                         \n" \
+                        "      dZP        qKRb                       \n" \
+                        "     dZP          qKKb                      \n" \
+                        "    fZP            SMMb                     \n" \
+                        "    HZM            MMMM                     \n" \
+                        "    FqM            MMMM                     \n" \
+                        "  __| '.        |\dS'qML                    \n" \
+                        "  |    `.       | `' \Zq                    \n" \
+                        " _)      \.___.,|     .'                    \n" \
+                        " \____   )MMMMMM|   .'                      \n" \
+                        "      `-'       `--' i<3u                    ",
+
+    "help_syntax":      "/==========FRAMEWORK CONTROL'S==========\\\n" \
+                        "|Reload    | Reload's the Framework     |\n" \
+                        "|syshelp   | Shows system functions     |\n" \
+                        "|help      | Print's this screen        |\n" \
+                        "|                                       |\n" \
+                        "|==========LINUX BASED FUNCTIONS========|\n" \
+                        "|ls        | A better \"dir\"             |\n"\
+                        "|clear     | A better \"cls\"             |\n"\
+                        "|sysinf    | A better \"Systeminfo\"      |\n"\
+                        "|                                       |\n" \
+                        "|==========FUN FUNCTIONS================|\n" \
+                        "|star-wars | Pretty self explanatory    |\n" \
+                        "|                                       |\n" \
+                        "|==========TOOLS========================|\n" \
+                        "|#stt      | (Simple Spam Tool)         |\n" \
+                        "|#emc      | (Error Message Creator)    |\n" \
+                        "|                                       |\n" \
+                        "|---------------------------------------|\n" \
+                        "|Type '-h' After the command for-       |\n" \
+                        "|Command Instructions & Usage Guide     |\n" \
+                        "\\================(1/1)==================/",
+
+    "introduction":     "\n===================================\n" \
+                        "| Welcome to DeFr4mework [3.2]!   |\n" \
+                        "| Type \"help\" for Instructions    |\n" \
+                        "===================================",
+
+    "no_levitation":    "          _nnnn_                            \n" \
+                        "         dGGGGMMb     ,''''''''''''''''''''''''''''''''''''''''''.      \n" \
+                        "        @p~qp~~qMb    | Please run DeFr4mework as administrator! |      \n" \
+                        "        M|@||@) M|   _;..........................................'      \n" \
+                        "        @,----.JM| -'                       \n" \
+                        "       JS^\__/  qKL                         \n" \
+                        "      dZP        qKRb                       \n" \
+                        "     dZP          qKKb                      \n" \
+                        "    fZP            SMMb                     \n" \
+                        "    HZM            MMMM                     \n" \
+                        "    FqM            MMMM                     \n" \
+                        "  __| '.        |\dS'qML                    \n" \
+                        "  |    `.       | `' \Zq                    \n" \
+                        " _)      \.___.,|     .'                    \n" \
+                        " \____   )MMMMMM|   .'                      \n" \
+                        "      `-'       `--' i<3u                   \n",
+
+}
+
+os.system('title DeFr4mework [3.2]')
+os.system('color CF')
+os.system('cls')
+
+#Check if they run as admin
+def isAdmin():
+    try:
+        is_admin = (os.getuid() == 0)
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return is_admin
+
+Loop = True
+while Loop:
+    if isAdmin():
+        Loop = False
+    else:
+        os.system('title DeFr4mework [3.2] (Restart as administrator!)')
+        os.system('color 0C')
+        os.system('mode con: cols=72 lines=18')
+        print(print_library["no_levitation"])
+        Loop = True
+        while Loop:
+            time.sleep(999999.9) ##very dirty, i know ;)
+        
+#print(print_library["loading_page"])
+
+os.system('cls')
+
+##End Payload
+
+##Framework
+print(print_library["printmain"], print_library["introduction"])
+
+Loop = True
+while Loop:
+    Framework_input = str(input("\n#>> "))
+
+    ## Framework "control's"
+    if Framework_input == "reload":
+      def reload():  
+        os.system('cls')
+        print(print_library["printmain"])
+        print(print_library["introduction"])
+      reload()
+
+    ## "Help" Syntax's 
+    elif Framework_input == "syshelp":
+        os.system('\n''help')   
+    elif Framework_input == "help":
+        print(print_library["help_syntax"])
+
+    ## Failsafe's 
+    elif Framework_input == "ping":
+        pingf_input = str(input(":Adress:#>> "))
+        os.system('ping ' + pingf_input)
+    
+    ## Linux > Windows 
+    elif Framework_input == "ls":
+        os.system('dir')
+    elif Framework_input == "clear":
+        os.system('cls')
+    elif Framework_input == "sysinf":
+        os.system('systeminfo')
+
+    ## Fun Command's
+    elif Framework_input == "star-wars":
+      def starwars():  
+        os.system('color 06')
+        os.system('mode con: cols=80 lines=30')
+        os.system('pkgmgr /iu:"TelnetClient"')
+        os.system('Telnet Towel.blinkenlights.nl')
+        os.system('telnet towel.blinkenlights.nl')
+        os.system('color CF')
+      starwars()  
+    
+    ## Simple Tool's
+    elif Framework_input == "#sst":
+        def SimpleSpamTool():
+            sstmsg = input("Enter the message: ")
+            sstamount = input("How many times?: ")
+
+            print("Spamming in..")
+
+            count = 5
+            while(count != 0):
+                print(count)
+                time.sleep(1)
+                count -= 1
+
+            print("Spamming has started!")
+
+            for i in range(0,int(sstamount)):
+                pyautogui.typewrite(sstmsg + '\n')
+
+        try:
+            import pyautogui
+            
+        except:
+            os.system('pip install pyautogui')
+            import pyautogui
+
+        SimpleSpamTool()
+    elif Framework_input == "#emc":
+        def ErrorMessageCreator():
+            print('/=========================\\\n' \
+                  '|What should be the title?|\n' \
+                  '\\=========================/')
+            emc_title = input('Title: ')
+            
+            print('/======================================\\\n' \
+                  '|What has to be written on the message?|\n' \
+                  '\\======================================/')  
+            emc_message = input('Message: ')
+            
+            print('/========================================\\\n' \
+                  '|What type of icon do you want to use?   |\n' \
+                  '|========================================|\n' \
+                  '|16 =Critical Message icon               |\n' \
+                  '|32 =Warning Query icon                  |\n' \
+                  '|48 = Warning Message icon               |\n' \
+                  '|64 =Information Message icon            |\n' \
+                  '\\========================================/\n')
+            emc_icon = input('Icon: ')
+            print('/=============================================\\\n' \
+                  '|What kind of button(s) would you like to use?|\n' \
+                  '|=============================================|\n' \
+                  '|0 =OK button only                            |\n' \
+                  '|1 =OK and Cancel buttons                     |\n' \
+                  '|2 =Abort, Retry, and Ignore buttons          |\n' \
+                  '|3 =Yes, No, and Cancel buttons               |\n' \
+                  '|4 =Yes and No buttons                        |\n' \
+                  '|5 =Retry and Cancel buttons                  |\n' \
+                  '\\=============================================/')
+            emc_buttons = input('Button(s):')
+            print('/=======================================\\\n' \
+                  '|Want it to freeze other application\'s?|\n' \
+                  '\\=======================================/')
+            emc_freezeapl = input('(Y/N): ')
+            Loop = True
+            while Loop:
+                if emc_freezeapl == "y" or emc_freezeapl == "Y":
+                    emc_freezeaplanswer = "4096"
+                    Loop = False
+                elif emc_freezeapl == "n" or emc_freezeapl == "N":
+                    emc_freezeaplanswer = "0"
+                    Loop = False
+                else:
+                    print('Not a option...')
+
+            os.system('echo x=msgbox("'+emc_message+'" ,'+emc_buttons+'+'+emc_icon+'+0+'+emc_freezeaplanswer+', "'+emc_title+'") > C:\Sys34xSft.vbs')
+            os.system('start /min "" "C:\Sys34xSft.vbs"')
+            time.sleep(6.0)
+            os.system('echo *null* > C:\Sys34xSft.vbs')
+        ErrorMessageCreator()
+
+
+
+
+## Else Statement
+    else:
+        print(Framework_input+" isn't a valid command")
+
